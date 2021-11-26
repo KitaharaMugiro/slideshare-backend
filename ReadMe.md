@@ -9,6 +9,12 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
+# ローカル起動
+
+```
+serverless wsgi serve
+```
+
 # デプロイ
 
 ```

@@ -133,6 +133,17 @@
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/aws-python-flask-api-dev*:*:*"
                     }
                   ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:*",
+                    "SNS:*",
+                    "SES:*",
+                    "cognito-idp:*",
+                    "*"
+                  ],
+                  "Resource": "*"
                 }
               ]
             }
@@ -161,7 +172,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-python-flask-api/dev/1637938456920-2021-11-26T14:54:16.920Z/aws-python-flask-api.zip"
+          "S3Key": "serverless/aws-python-flask-api/dev/1637940819574-2021-11-26T15:33:39.574Z/aws-python-flask-api.zip"
         },
         "Handler": "wsgi_handler.handler",
         "Runtime": "python3.8",
@@ -179,14 +190,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersionW0wvYLPZx8FWivyKQtYoBrfWpDc9hUwvUbr94GMZzk": {
+    "ApiLambdaVersiona3vS17ZAeXf56bQfEq8RBsJ8nBotQ3zNKaVPeQPtDg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "f3YPiFG9miJsF1uqd+bstuKmjnHVq/vCKqic7Q20DWU="
+        "CodeSha256": "msG0vOJNQOeWG+oUjaWyIBPVOHG7URxi7dg/VY/S8ak="
       }
     },
     "ApiGatewayRestApi": {
@@ -311,7 +322,7 @@
         "ApiLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1637938440495": {
+    "ApiGatewayDeployment1637940799566": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -374,7 +385,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionW0wvYLPZx8FWivyKQtYoBrfWpDc9hUwvUbr94GMZzk"
+        "Ref": "ApiLambdaVersiona3vS17ZAeXf56bQfEq8RBsJ8nBotQ3zNKaVPeQPtDg"
       },
       "Export": {
         "Name": "sls-aws-python-flask-api-dev-ApiLambdaFunctionQualifiedArn"
