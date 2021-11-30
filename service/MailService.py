@@ -9,6 +9,12 @@ user_pool_id = os.getenv("USER_POOL_ID")
 source_mail = os.getenv("SOURCE_MAIL")
 htmls = {"ConfirmationForSubscribing": "ConfirmationForSubscribing.html"}
 # SESでメールを送信するためのハンドラ
+
+
+def send_email_for_subscribing(USER_NAME, TITLE, DATE, URL):
+    send_email(USER_NAME, "ConfirmationForSubscribing", TITLE, DATE, URL)
+
+
 def send_email(USER_NAME, TYPE, TITLE, DATE, URL):
     # cognitoからユーザー情報を取得
     client = boto3.client("cognito-idp")
